@@ -102,6 +102,12 @@ $(document).ready(function() {
       $('ul.thumbnails.queue-counters h3').html('0');
     });
   });
+
+  $('#btnResetHistory').click(function() {
+    $.post("/queues/" + qname + "/history-reset", function() {
+      return true;
+    });
+  });
 });
 
 function addCommas(num) {
